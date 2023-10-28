@@ -1,4 +1,4 @@
-export const API_URL = 'http://127.0.0.1:3000';
+export const API_URL = 'https://globextestapi-production.up.railway.app';
 
 export const DEBOUNCE_TIMEOUT = 500;
 
