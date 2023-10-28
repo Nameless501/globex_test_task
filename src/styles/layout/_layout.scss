@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+.page {
+    margin: 0 auto;
+    width: 100%;
+    max-width: $max_content_width;
+    min-width: $min_content_width;
+    min-height: 100vh;
+}

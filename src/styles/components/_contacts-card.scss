@@ -1,0 +1,44 @@
+@use '../abstracts' as *;
+
+.contacts-card {
+    width: 357px;
+    height: 314px;
+    padding: $gap_m;
+    @include flex-column;
+    align-items: flex-start;
+    gap: $gap_m;
+    border-radius: 16px;
+    background-color: $color_white;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &__name {
+        @include font-params(24px, 700, 30px);
+    }
+
+    &__contacts-wrapper {
+        @include flex-column;
+        align-items: flex-start;
+        gap: $gap_xs;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: $gap_s;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        object-position: center;
+        object-fit: contain;
+    }
+
+    &__contact {
+        @include font-params(14px, 400, 20px, $color_gray_dark);
+    }
+}

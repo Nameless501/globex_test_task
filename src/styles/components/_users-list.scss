@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+.users-list {
+    width: 100%;
+    @include flex-center;
+
+    &__list {
+        width: 100%;
+        list-style: none;
+        @include flex-center;
+        flex-wrap: wrap;
+        gap: $gap_m;
+    }
+
+    &__message {
+        @include font-params(20px, 400, 30px, $color_purple_dark);
+    }
+}

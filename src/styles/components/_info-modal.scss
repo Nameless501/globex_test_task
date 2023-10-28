@@ -1,0 +1,101 @@
+@use '../abstracts' as *;
+
+.info-modal {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: transparent;
+    border: 0;
+    justify-content: center;
+    align-items: center;
+
+    &::backdrop {
+        background-color: rgb(188, 195, 208, 0.5);
+        opacity: 0.6;
+    }
+
+    &_opened {
+        display: flex;
+    }
+
+    &__data {
+        width: 500px;
+        padding: $gap_m;
+        display: grid;
+        border-radius: 16px;
+        background-color: $color_white;
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+        grid-template-columns: auto 40px auto 40px;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'name name . button'
+            'info info info info'
+            'details details details details';
+        row-gap: $gap_xl;
+        justify-items: start;
+        align-items: center;
+
+        @include breakpoint(767px) {
+            & {
+                width: 90%;
+                max-width: 400px;
+            }
+        }
+    }
+
+    &__name {
+        @include font-params(24px, 700, 30px);
+        grid-area: name;
+    }
+
+    &__button {
+        grid-area: button;
+        justify-self: end;
+        @include flex-center;
+    }
+
+    &__info {
+        grid-area: info;
+        display: grid;
+        grid-template-columns: 137px 40px auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'phone-title . phone-text'
+            'mail-title . mail-text'
+            'date-title . date-text'
+            'position-title . position-text'
+            'department-title . department-text';
+        row-gap: $gap_s;
+        justify-items: start;
+        align-items: start;
+    }
+
+    &__details {
+        grid-area: details;
+        @include flex-column;
+        gap: $gap_xs;
+    }
+
+    $rows: 'phone', 'mail', 'date', 'position', 'department';
+
+    &__row-title {
+        @include font-params(18px, 400, 24px);
+
+        @each $row in $rows {
+            &_place_#{$row} {
+                grid-area: #{$row}-title;
+            }
+        }
+    }
+
+    &__row-text {
+        @include font-params(16px, 400, 24px, $color_gray_dark);
+
+        @each $row in $rows {
+            &_place_#{$row} {
+                grid-area: #{$row}-text;
+            }
+        }
+    }
+}

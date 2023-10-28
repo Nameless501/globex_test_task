@@ -1,0 +1,10 @@
+@use '../abstracts' as *;
+
+.error-message {
+    width: 100%;
+    @include flex-center;
+
+    &__text {
+        @include font-params(20px, 400, 30px, $color_purple_dark);
+    }
+}

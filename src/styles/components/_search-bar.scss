@@ -1,0 +1,33 @@
+@use '../abstracts' as *;
+
+.search-bar {
+    width: 100%;
+    position: relative;
+
+    &__input {
+        width: 100%;
+        height: 48px;
+        padding: $gap_xs $gap_m;
+        padding-right: 48px;
+        border-radius: 24px;
+        border: 1px solid $color_purple_light;
+        @include font-params(24px, 500, 30px);
+
+        &:focus {
+            outline: none;
+            border: 1px solid $color_purple_dark;
+        }
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 50%;
+        right: $gap_m;
+        transform: translateY(-50%);
+        @include bg-image('search-icon.svg');
+    }
+}

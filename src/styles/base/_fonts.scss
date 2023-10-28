@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+@font-face {
+    @include font-face(
+        'Proxima Nova',
+        400,
+        'proximanova_regular.ttf',
+        'truetype'
+    );
+}
+
+@font-face {
+    @include font-face('Proxima Nova', 700, 'proximanova_bold.otf', 'opentype');
+}

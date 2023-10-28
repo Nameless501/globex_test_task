@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+.close-button {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    @include bg-image('close-icon.svg');
+
+    &:hover {
+        cursor: pointer;
+    }
+}

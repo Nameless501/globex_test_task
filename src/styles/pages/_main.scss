@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.main {
+    width: 100%;
+    padding: 64px 80px;
+    @include flex-column;
+    gap: $gap_l;
+
+    @include breakpoint(767px) {
+        & {
+            padding: 30px 15px;
+        }
+    }
+}

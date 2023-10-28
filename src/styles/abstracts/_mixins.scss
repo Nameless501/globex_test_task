@@ -1,0 +1,41 @@
+@mixin font-face($family, $weight, $file-name, $format) {
+    font-family: $family;
+    font-style: normal;
+    font-weight: $weight;
+    font-display: swap;
+    src: url('/src/assets/fonts/#{$file-name}') format($format);
+}
+
+@mixin font-params($size, $weight, $lh, $color: false) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lh;
+    font-style: normal;
+    @if $color {
+        color: $color;
+    }
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin breakpoint($breakpoint) {
+    @media only screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin bg-image($file-name, $size: contain, $position: center) {
+    background-image: url('/src/assets/images/#{$file-name}');
+    background-position: $position;
+    background-size: $size;
+    background-repeat: no-repeat;
+}
